@@ -78,7 +78,8 @@ border-radius:5px;
 `
 
 export const QuantityTextBox = styled.input`
-width:50px;
+width:40px;
+border: 1px solid #c9c9c9;
 type:text;
 margin:5px 5px 5px 5px;
 text-align:center;
