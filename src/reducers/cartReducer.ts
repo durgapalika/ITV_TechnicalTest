@@ -75,7 +75,7 @@ export const cartReducer = (state: ICartState = initialState, action: cartDispat
         }
         case DELETE_PRODUCT: {
             const allProducts = state.items;
-            const updatedProducts = allProducts.filter((product) => product.id != action.payload);
+            const updatedProducts = allProducts.filter((product) => product.id !== action.payload);
             const subTotal = updatedProducts.reduce((prevProduct, curproduct) => {
                 return prevProduct + curproduct.cost
             }, 0);

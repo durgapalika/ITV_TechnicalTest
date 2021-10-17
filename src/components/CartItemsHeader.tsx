@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { CartProductsHeader, ProductItemHeaderText } from '../App.styles';
+import { Col, Row } from 'react-bootstrap';
+import { ProductItemHeaderText } from '../App.styles';
 
 const CartItemHeader = () => {
 	return (

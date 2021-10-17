@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Button, Card, Modal, Spinner, Table } from 'react-bootstrap';
+import {  Card, Modal, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { completePurchase, decrementProductQuantity, deleteProduct, incrementProductQuantity, updateQuantity } from '../actions/actions';
 import { BuyNowButton, CardHeaderText, HorizantalRule, SubTitleText, SubTotalContainer, TotalContainer, VATContainer } from '../App.styles';
@@ -27,22 +27,22 @@ const Cart = () => {
 	// callback to handle quantity increment
 	const handleQuantityIncrement = useCallback((productId: number) => {
 		dispatch(incrementProductQuantity(productId));
-	}, []);
+	}, [dispatch]);
 
 	// callback to handle quantity decrement
 	const handleQuantityDecrement = useCallback((productId: number) => {
 		dispatch(decrementProductQuantity(productId));
-	}, []);
+	}, [dispatch]);
 
 	// callback to handle product deletion
 	const handleDeleteProduct = useCallback((productId: number) => {
 		dispatch(deleteProduct(productId));
-	}, []);
+	}, [dispatch]);
 
 	// callback to handle quantity input
 	const handleQuantityUpdate = useCallback((productId: number, quantity: number) => {
 		dispatch(updateQuantity(productId, quantity));
-	}, []);
+	}, [dispatch]);
 
 	// Handler for buynow click
 	const handleBuyNowClick = () => {

@@ -67,7 +67,7 @@ const CartDetailItem = ({
 
 	// provide and alternate color
 	const getBackgroundColor = (index: number) => {
-		return index % 2 === 0 ? 'transparent' : '#e3e3e3';
+		return index % 2 === 0 ? 'transparent' : '#f9faf9';
 	};
 	return (
 		<Row style={{ backgroundColor: getBackgroundColor(index) }} className="card-body-extend">
