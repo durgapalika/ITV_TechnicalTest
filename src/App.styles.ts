@@ -42,7 +42,7 @@ font-weight: bold;
 `
 
 export const HorizantalRule = styled.hr`
-
+background-color:#c9c9c9
 `
 
 export const IncreaseQuantityButton = styled.button`
@@ -110,9 +110,9 @@ color:white;
 text-align: center;
 float:right;
 background-color:#17BEC8;
-padding: 5px;
-font-size:14pt;
-font-weight:bold;
+padding: 0.5rem;
+font-size:12pt;
+font-weight:600;
 border-radius:20px;
 border:none;
 width:130px
