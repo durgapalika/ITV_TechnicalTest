@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Button, Card, Modal, Spinner, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { completePurchase, decrementProductQuantity, deleteProduct, incrementProductQuantity, updateQuantity } from '../actions/actions';
@@ -14,9 +14,9 @@ const Cart = () => {
 	const vat = useSelector<RootStore, number>((state: RootStore) => state.cart.vat);
 	const total = useSelector<RootStore, number>((state: RootStore) => state.cart.total);
 
-	//State to show/hide loading spinner
+	// State to show/hide spinner
 	const [loading, setLoading] = useState(false);
-	// state to show/hide success modal dialog
+	// state to hide/show success dialog
 	const [checkoutComplete, setCheckoutComplete] = useState(false);
 
 	const handleClose = () => setLoading(false);
@@ -24,26 +24,27 @@ const Cart = () => {
 
 	const dispatch = useDispatch();
 
-	// handles quantity increment
-	const handleQuantityIncrement = (productId: number) => {
+	// callback to handle quantity increment
+	const handleQuantityIncrement = useCallback((productId: number) => {
 		dispatch(incrementProductQuantity(productId));
-	};
+	}, []);
 
-	// handles quantity decrement
-	const handleQuantityDecrement = (productId: number) => {
+	// callback to handle quantity decrement
+	const handleQuantityDecrement = useCallback((productId: number) => {
 		dispatch(decrementProductQuantity(productId));
-	};
+	}, []);
 
-	// handles product delete button
-	const handleDeleteProduct = (productId: number) => {
+	// callback to handle product deletion
+	const handleDeleteProduct = useCallback((productId: number) => {
 		dispatch(deleteProduct(productId));
-	};
+	}, []);
 
-	// handles manual quantity input
-	const handleQuantityUpdate = (productId: number, quantity: number) => {
+	// callback to handle quantity input
+	const handleQuantityUpdate = useCallback((productId: number, quantity: number) => {
 		dispatch(updateQuantity(productId, quantity));
-	};
+	}, []);
 
+	// Handler for buynow click
 	const handleBuyNowClick = () => {
 		setLoading(true);
 		dispatch(
@@ -54,8 +55,7 @@ const Cart = () => {
 				total,
 			})
 		);
-
-		// using a simple timout to show spinner for 2 secs
+		// delay for 2 seconds to simulate api call
 		setTimeout(() => {
 			setLoading(false);
 			setCheckoutComplete(true);
@@ -109,7 +109,7 @@ const Cart = () => {
 			</BuyNowButton>
 
 			<Modal show={loading} onHide={handleClose} backdrop="static" keyboard={false}>
-				<Modal.Header closeButton>
+				<Modal.Header>
 					<Modal.Title>Please Wait</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>

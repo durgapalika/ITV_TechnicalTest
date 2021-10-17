@@ -113,4 +113,4 @@ const CartDetailItem = ({
 	);
 };
 
-export default CartDetailItem;
+export default React.memo(CartDetailItem);

@@ -24,4 +24,4 @@ const CartItemHeader = () => {
 	);
 };
 
-export default CartItemHeader;
+export default React.memo(CartItemHeader);

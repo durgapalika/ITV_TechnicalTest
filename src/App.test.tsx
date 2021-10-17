@@ -2,13 +2,13 @@ import React, { Children, ComponentType } from 'react';
 import { fireEvent, screen, waitFor, render, act } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import rootReducer from '../../reducers';
 import thunk from 'redux-thunk';
-import { initialState } from '../../reducers/cartReducer';
+import { initialState } from './reducers/cartReducer';
 import configureStore from 'redux-mock-store';
 import createMockStore from 'redux-mock-store';
 import { listeners } from 'cluster';
-import App from '../../App';
+import App from './App';
+import rootReducer from './reducers';
 
 let store = createStore(rootReducer, { cart: initialState }, applyMiddleware(thunk));
 const renderWithRedux = (ui: React.ReactElement) => {

@@ -7,7 +7,7 @@ import { CheckOutTitle, HorizantalRule } from './App.styles';
 
 function App() {
 	return (
-		<Container style={{ padding: '10rem 10rem', border: '1px solid #c1c1c1' }}>
+		<Container style={{ padding: '5rem 10rem', border: '1px solid #c1c1c1' }}>
 			<CheckOutTitle data-testid="spanCartTitle">Review Your Order & Complete Checkout</CheckOutTitle>
 			<HorizantalRule />
 			<Cart></Cart>
