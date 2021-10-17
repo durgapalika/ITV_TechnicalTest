@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.card-body-extend{
+  margin:5px 0;
+  padding: 1px 0;
+  align-items: center;
+}
+
+.card-header-extend{
+  background-color: #e3e3e3;
+  margin:5px 0;
+  padding: 0.5rem 0;
+  align-items: center;
+}
