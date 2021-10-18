@@ -1,10 +1,10 @@
 ## Technical stack used
-React
-Redux
-Redux-thunk
-Typescript
-Bootstrap
-React-testing-library
+React,
+Redux,
+Redux-thunk,
+Typescript,
+Bootstrap,
+React-testing-library,
 Styled-components
 
 ## How it is Done.
